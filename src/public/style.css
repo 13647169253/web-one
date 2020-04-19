@@ -1,0 +1,104 @@
+/*hack “ydui.base.css”对背景色的设置
+body{
+	background-color: white!important
+}
+*/
+/*hack “vant”ui框架对输入框的位置设置*/
+.van-field__control{
+	margin-top: 5px!important;
+}
+/*vant tab标签的底部线条颜色为渐变色（蓝-绿）*/
+.tabBox .van-tabs__line{
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#37a4e5+0,4eeea6+99,4eeea6+100,2989d8+100,2989d8+100,000000+100,207cca+100,4eeea6+102 */
+background: #37a4e5; /* Old browsers */
+background: -moz-linear-gradient(left,  #37a4e5 0%, #4eeea6 99%, #4eeea6 100%, #2989d8 100%, #2989d8 100%, #000000 100%, #207cca 100%, #4eeea6 102%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left,  #37a4e5 0%,#4eeea6 99%,#4eeea6 100%,#2989d8 100%,#2989d8 100%,#000000 100%,#207cca 100%,#4eeea6 102%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right,  #37a4e5 0%,#4eeea6 99%,#4eeea6 100%,#2989d8 100%,#2989d8 100%,#000000 100%,#207cca 100%,#4eeea6 102%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37a4e5', endColorstr='#4eeea6',GradientType=1 ); /* IE6-9 */
+}
+/*表单的下拉菜单/输入框/按钮*/
+.formBtn{
+	background-color: #ecebf1!important;
+	width: 144px!important;
+	height: 70px!important;
+	align-items: center; /*垂直居中*/
+}
+/*表单控件*/
+.formControl1 {
+	padding-left: 30px;
+	padding-right: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.formControl2 {
+	padding-left: 20px;
+	padding-right: 30px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.formControl3 {
+	padding-left: 20px;
+	padding-right: 30px;
+}
+/*表单标题*/
+.formTitle{
+	font-size: 30px;
+}
+/*必选/填标识*/
+.requiredStar {
+	padding-left: 5px;
+	padding-right: 5px;
+	color: red;
+}
+/*上传控件*/
+.uploadVideo {
+		float: left;
+	}
+.uploadControl{
+	width: 155px!important;
+	height: 155px!important;
+	margin: 40px;
+	justify-content: center; /*水平居中*/
+	align-items: center; /*垂直居中*/
+	display: table-cell;
+	font-size: 20px;
+	border-radius: 15px;
+	background-color: #f3f6fb;
+}
+.uploadControl div{
+	color:gray;
+	text-align: center;
+}
+/*图片预览控件*/
+.imgControl{
+	margin:17px;
+	float: left;
+	border-radius: 10px;
+	height: 155px;
+	width: 155px;
+	margin-bottom: 10px;
+	position: relative;
+}
+.imgControl .clearImg{
+	position: absolute;
+	border-radius: 45px;
+	top: -25px;
+	right: -25px;
+	border:1px solid white;
+	background-color: white
+}
+/*清除浮动 父元素 添加 clearfix*/
+.clearfix:after,.clearfix:before{
+  content: "";
+  display: table;
+}
+.clearfix:after{
+  clear: both;
+}
+.clearfix{
+  *zoom: 1;
+}
+/*统一下边框*/
+:root{
+  --basebtom:1px solid #e7e6eb;
+}

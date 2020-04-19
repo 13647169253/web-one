@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-
+
+scale=1, user-scalable=no">
+		<meta http-equiv=”X-UA-Compatible” content=”IE=edge,chrome=1″/>
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+
+		<title>video</title>
+
+		<style>
+			body,
+			html {
+				width: 100%;
+				height: 100%;
+			}
+			
+			video {
+				width: 400px;
+			}
+			
+			canvas {
+				width: 200px;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<video src="SampleVideo_1280x720_1mb.mp4" controls></video>
+		<br /><button class="cut">点 击截屏
+
+		</button>
+		<div class='canvasDiv'>
+			<!--<canvas></canvas>-->
+		</div>
+		<script>
+			$(function() {
+				var num = -1;
+				var $canvas =
+
+					$('canvas');
+				var $video = $('video');
+				$canvas.attr({
+					width:
+
+						$video.width(),
+					height: $video.height(),
+				});
+				setTimeout(function(){
+					console.log($video[0].duration);
+					for(let i = $video[0].duration/10;i <= $video[0].duration;i+=($video[0].duration/10)){
+						$video[0].currentTime=i;//设置播放时间为某个时间点（单位：秒）
+						$video[0].play();
+						setTimeout(function(){
+							console.log(i)
+							setImg();
+						},200)//等待加载200毫秒再截图
+					}
+				},1000)
+				$('.cut').on('click', function() {
+					setImg();
+				});
+				//截图
+				function setImg(){
+					$('.canvasDiv').append('<canvas hidden></canvas>');
+					$canvas =$('canvas');
+					num += 1;
+					var w = $video[0].videoWidth; //视频原有尺寸
+
+					var h = $video[0].videoHeight; //视频原有尺寸
+
+					$canvas.attr({
+
+						width: w,
+						height: h,
+					});
+					var ctx = $canvas[num].getContext('2d');
+					ctx.drawImage($video[0], 0,
+
+						0, w, h);
+					var base64 = $canvas[num].toDataURL('images/png');
+					$('.canvasDiv').append('<img src="'+base64+'" style="height:100px;width:100px;margin:20px" />');
+				}
+			});
+		</script>
+	</body>
